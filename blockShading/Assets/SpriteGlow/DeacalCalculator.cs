@@ -20,8 +20,8 @@ public class Corner
 public class DeacalCalculator : MonoBehaviour {
 
     public bool applyOnStart;
-    public Side[] sides;
-    public Corner[] corners;
+    List<Side> sides = new List<Side>();
+    List<Corner> corners = new List<Corner>();
 
     void Start()
     {
@@ -40,6 +40,12 @@ public class DeacalCalculator : MonoBehaviour {
 
     void InitializeSidesAndCorners()
     {
+        for(int i=0; i<4; i++)
+        {
+            sides.Add(new Side());
+            corners.Add(new Corner());
+        }
+
         sides[0].dir = Vector3.forward;
         sides[1].dir = Vector3.right;
         sides[2].dir = Vector3.back;
@@ -71,7 +77,7 @@ public class DeacalCalculator : MonoBehaviour {
             if(sides[i].occluded)
             if(i == 3)
             {
-                corners[corners.Length - 1].dontCheck = true;
+                corners[corners.Count - 1].dontCheck = true;
                 corners[0].dontCheck = true;
             }
             else
