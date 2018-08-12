@@ -18,19 +18,18 @@ public class Corner
 }
 
 public class DeacalCalculator : MonoBehaviour {
-
-    public bool applyOnStart;
+   
     List<Side> sides = new List<Side>();
     List<Corner> corners = new List<Corner>();
 
-    void Start()
-    {
-        if (applyOnStart)
-            CalCulateDecal(transform);
-    }
+    public int shadePixelSize = 10;
+    public Color ShadePixelColor = Color.black;
+
 
     public void CalCulateDecal(Transform face)
     {
+        sides = new List<Side>();
+        corners = new List<Corner>();
         InitializeSidesAndCorners();
         CheckSidesOccluders(face);
         SetIfCornerCheckNeeded();
@@ -110,7 +109,7 @@ public class DeacalCalculator : MonoBehaviour {
 
     void GenerateTexture(Transform face)
     {
-        var texture = new Texture2D(10, 10, TextureFormat.ARGB32, false);
+        var texture = new Texture2D(shadePixelSize, shadePixelSize, TextureFormat.ARGB32, false);
 
         for (int i = 0; i < texture.width; i++)
             for (int j = 0; j < texture.height; j++)
@@ -121,39 +120,39 @@ public class DeacalCalculator : MonoBehaviour {
         if (sides[0].occluded)
         {
             for (int i = 0; i < texture.width; i++)
-                texture.SetPixel(i, texture.height - 1, Color.black);
+                texture.SetPixel(i, texture.height - 1, ShadePixelColor);
         }
 
         if (sides[1].occluded)
         {
             for (int j = 0; j < texture.height; j++)
-                texture.SetPixel(texture.width - 1, j, Color.black);
+                texture.SetPixel(texture.width - 1, j, ShadePixelColor);
         }
 
         if (sides[2].occluded)
         {
             for (int i = 0; i < texture.width; i++)
-                texture.SetPixel(i, 0, Color.black);
+                texture.SetPixel(i, 0, ShadePixelColor);
         }
 
         if (sides[3].occluded)
         {
             for (int j = 0; j < texture.height; j++)
-                texture.SetPixel(0, j, Color.black);
+                texture.SetPixel(0, j, ShadePixelColor);
         }
 
         //corners
 
         if (corners[0].cornerOccluded)
-            texture.SetPixel(0, texture.height - 1, Color.black);
+            texture.SetPixel(0, texture.height - 1, ShadePixelColor);
 
         if (corners[1].cornerOccluded)
-            texture.SetPixel(texture.width - 1, texture.height - 1, Color.black);
+            texture.SetPixel(texture.width - 1, texture.height - 1, ShadePixelColor);
 
         if (corners[2].cornerOccluded)
-            texture.SetPixel(texture.width - 1, 0, Color.black);
+            texture.SetPixel(texture.width - 1, 0, ShadePixelColor);
         if (corners[3].cornerOccluded)
-            texture.SetPixel(0, 0, Color.black);
+            texture.SetPixel(0, 0, ShadePixelColor);
 
         texture.wrapMode = TextureWrapMode.Clamp;
         texture.Apply();

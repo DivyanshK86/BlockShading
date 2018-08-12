@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -966,28 +966,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   applyOnStart: 0
-  sides:
-  - dir: {x: 0, y: 0, z: 0}
-    occluded: 0
-  - dir: {x: 0, y: 0, z: 0}
-    occluded: 0
-  - dir: {x: 0, y: 0, z: 0}
-    occluded: 0
-  - dir: {x: 0, y: 0, z: 0}
-    occluded: 0
-  corners:
-  - dir: {x: 0, y: 0, z: 0}
-    dontCheck: 0
-    cornerOccluded: 0
-  - dir: {x: 0, y: 0, z: 0}
-    dontCheck: 0
-    cornerOccluded: 0
-  - dir: {x: 0, y: 0, z: 0}
-    dontCheck: 0
-    cornerOccluded: 0
-  - dir: {x: 0, y: 0, z: 0}
-    dontCheck: 0
-    cornerOccluded: 0
+  shadePixelSize: 10
+  ShadePixelColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!4 &932691126 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4138984631274584, guid: a8d1b8d0599ad59488ae918b52d48e74,
@@ -1223,7 +1203,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1578368721
 Light:
   m_ObjectHideFlags: 0
