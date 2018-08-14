@@ -37,7 +37,6 @@ GameObject:
   - component: {fileID: 33834895238102978}
   - component: {fileID: 64842814004857250}
   - component: {fileID: 23169395818568282}
-  - component: {fileID: 114634258514963896}
   m_Layer: 0
   m_Name: quadFace
   m_TagString: Untagged
@@ -85,7 +84,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f0104a21ba67e024ab7c3b60c5f14ef3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -125,17 +124,3 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114634258514963896
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1449208684641332}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 358ed89f9e1d1a64b883eee69abdc901, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  applyOnStart: 1
-  shadePixelSize: 2
-  ShadePixelColor: {r: 0.8602941, g: 0.8602941, b: 0.8602941, a: 1}

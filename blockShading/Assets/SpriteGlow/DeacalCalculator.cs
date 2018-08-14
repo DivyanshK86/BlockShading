@@ -155,9 +155,9 @@ public class DeacalCalculator : MonoBehaviour {
             texture.SetPixel(0, 0, ShadePixelColor);
 
         texture.wrapMode = TextureWrapMode.Clamp;
+
         texture.Apply();
 
         face.GetComponent<MeshRenderer>().material.mainTexture = texture;
-        //face.transform.localRotation = Quaternion.Euler(transform.localRotation.eulerAngles.x, transform.localRotation.eulerAngles.y + 180, transform.localRotation.eulerAngles.z);
     }
 }
